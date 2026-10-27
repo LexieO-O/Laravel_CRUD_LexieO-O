@@ -1,8 +1,18 @@
-<p>Seja bem-vindo, {{ $nome }}!</p>
+@extends('layout')
 
-<form action="{{ route('pessoa.saudar') }}" method="POST">
+@section('titulo', 'Olá!')
+
+@section('conteudo')
+
+<h1>Seja bem-vindo, {{ $nome }}!</h1>
+
+<form class="cadastro" action="{{ route('pessoa.saudar') }}" method="POST">
     @csrf
-    <label>Digite seu nome:</label>
-    <input type="text" name="nome">
-    <button type="submit">Enviar</button>
+    <div class="campo-grupo">
+        <label class="campo" for="nome">Digite seu nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+    </div>
+    <button type="submit" class="btn-cadastrar">Enviar</button>
 </form>
+
+@endsection

@@ -17,7 +17,7 @@ class PessoaController extends Controller
         return view('minhapagina', [
             'nome' => $request->input('nome') ?? 'visitante',
         ]);
-}
+    }
 
     public function index(){
         $pessoas = Pessoa::all();
